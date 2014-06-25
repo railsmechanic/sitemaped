@@ -31,7 +31,7 @@ sitemap = website.sitemap
 ~~~
 
 ### Check whether an URL is covered by the sitemap
-To check for an URL covered by the sitemap use
+To check whether an URL is covered by the sitemap use
 ~~~ruby
 require 'sitemaped'
 
