@@ -16,8 +16,8 @@ gem 'sitemaped'
 
 ### Without Bundler
 If you're not using Bundler just execute on your commandline
-~~~ruby
-gem install sitemaped
+~~~bash
+$ gem install sitemaped
 ~~~
 
 ## Usage
