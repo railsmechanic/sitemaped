@@ -26,8 +26,8 @@ Sitemaped returns an array with all URLs listed in the sitemap(s)
 ~~~ruby
 require 'sitemaped'
 
-website = Sitemaped.new('http://www.example.com') # => ["http://www.example.com/", "http://www.example.com/contact", ...]
-sitemap = website.sitemap
+website = Sitemaped.new('http://www.example.com')
+sitemap = website.sitemap  # => ["http://www.example.com/", "http://www.example.com/contact", ...]
 ~~~
 
 ### Check whether an URL is covered by the sitemap
