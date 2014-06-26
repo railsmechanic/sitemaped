@@ -21,8 +21,7 @@ $ gem install sitemaped
 ~~~
 
 ## Usage
-### Get a list of all URLs listed in the sitemap
-Sitemaped returns an array with all URLs listed in the sitemap(s)
+### Get a list of all URLs covered by the sitemap(s)
 ~~~ruby
 require 'sitemaped'
 
@@ -31,7 +30,6 @@ sitemap = website.sitemap  # => ["http://www.example.com/", "http://www.example.
 ~~~
 
 ### Check whether an URL is covered by the sitemap
-To check whether an URL is covered by the sitemap use
 ~~~ruby
 require 'sitemaped'
 
@@ -39,6 +37,5 @@ sitemap = Sitemaped.new('http://www.example.com')
 sitemap.include?('http://www.example.com/contact') # => true or false
 ~~~
 
-## ToDo
-- Search for optimizations
+## Todo
 - Add tests
