@@ -5,6 +5,8 @@ require 'open-uri'
 
 class Sitemaped
 
+  VERSION = "0.1.1"
+
   def initialize(url)
     @url = URI.parse(URI.encode(url))
     raise URI::InvalidURIError.new('scheme or host missing') unless @url.scheme and @url.host
@@ -26,7 +28,7 @@ class Sitemaped
   end
 
   def robots_sitemap
-    @robots_sitemap_urls ||= open("#{@url.scheme}://#{@url.host}/robots.txt").read.scan(/\s*sitemap:\s*([^\r\n]+)\s*$/i).flatten!
+    @robots_sitemap_urls ||= open(URI.join(@url, "robots.txt")).read.scan(/\s*sitemap:\s*([^\r\n]+)\s*$/i).flatten!
   rescue
     @robots_sitemap_urls = []
   ensure
@@ -36,7 +38,7 @@ class Sitemaped
   end
 
   def default_sitemap
-    @default_sitemap_data ||= parse_sitemap(load_sitemap("#{@url.scheme}://#{@url.host}/sitemap.xml") || load_sitemap("#{@url.scheme}://#{@url.host}/sitemap.xml.gz"))
+    @default_sitemap_data ||= parse_sitemap(load_sitemap(URI.join(@url, "sitemap.xml")) || load_sitemap(URI.join(@url, "sitemap.xml.gz")))
   end
 
   def handle_nested_sitemaps(sitemap_list=[])
